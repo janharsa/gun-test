@@ -9,8 +9,8 @@
     <button>Přidat</button>
 </form>
 
-<script src="./node_modules/gun/gun.min.js"></script>
-<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/gun/gun.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script>
     var todos = Gun(['http://localhost:8765/gun', 'https://haxo-gun-server.herokuapp.com/gun']).get('todos');
 
