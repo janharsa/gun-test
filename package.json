@@ -1,0 +1,17 @@
+{
+  "name": "gun-test",
+  "version": "1.0.0",
+  "description": "npm install gun && cd node_modules/gun && npm start",
+  "main": "index.html",
+  "dependencies": {
+    "gun": "^0.2020.520",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "node --prof node_modules/gun/examples/http.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
