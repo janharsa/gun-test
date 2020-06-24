@@ -16,7 +16,8 @@
 
     $('form').on('submit', function (event) {
         var input = $('form').find('input');
-        todos.set({title: input.val()});
+        date = new Date();
+        todos.set({title: input.val(), created: date.toLocaleString()});
         input.val('');
         event.preventDefault()
     });
@@ -27,7 +28,13 @@
             li = $('<li>').attr('id', id).appendTo('ul')
         }
         if (todo) {
-            var html = '<span onclick="clickTitle(this)">' + todo.title + '</span>';
+            if (todo.created) {
+                var datum = todo.created;
+            } else {
+                var datum = '';
+            }
+
+            var html = '<span onclick="clickTitle(this)">' + '<span style="font-size: small; color: darkgrey;">' + datum + '</span>' + todo.title + '</span>';
             html = '<input type="checkbox" onclick="clickCheck(this)" ' + (todo.done ? 'checked' : '') + '>' + html;
             html += '<img onclick="clickDelete(this)" src="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-x.svg"/>';
             li.html(html)
